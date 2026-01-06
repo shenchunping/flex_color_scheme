@@ -6461,6 +6461,10 @@ class _ShowTextStyle extends StatelessWidget {
     final String height = style.height != null
         ? ' height: ${style.height!.toStringAsFixed(2)}'
         : '';
+    final String textBaseLine =
+        style.textBaseline != null ? ' ${style.textBaseline}' : '';
+    final String leadingDistribution =
+        style.leadingDistribution != null ? '${style.leadingDistribution}' : '';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -6470,7 +6474,9 @@ class _ShowTextStyle extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             '$font $size pt, $fontWeight $color '
-            'Letter spacing: $spacing$height',
+            'Letter spacing: $spacing$height '
+            '$textBaseLine '
+            '$leadingDistribution',
             style: infoStyle,
           ),
           const SizedBox(height: 4),
