@@ -5996,5 +5996,6 @@ abstract final class FlexColor {
     shadStone,
     shadViolet,
     shadYellow,
+    shadZinc,
   ];
 }
