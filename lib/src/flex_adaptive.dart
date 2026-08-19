@@ -140,6 +140,8 @@ class FlexAdaptive with Diagnosticable {
     required this.macOSWeb,
     required this.windows,
     required this.windowsWeb,
+    required this.ohos,
+    required this.ohosWeb,
     this.overrideIsWeb,
   });
 
@@ -159,6 +161,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = false,
     this.windows = false,
     this.windowsWeb = false,
+    this.ohos = false,
+    this.ohosWeb = false,
     this.overrideIsWeb,
   });
 
@@ -180,6 +184,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = true,
     this.windows = true,
     this.windowsWeb = true,
+    this.ohos = true,
+    this.ohosWeb = true,
     this.overrideIsWeb,
   });
 
@@ -202,6 +208,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = false,
     this.windows = false,
     this.windowsWeb = false,
+    this.ohos = false,
+    this.ohosWeb = false,
     this.overrideIsWeb,
   });
 
@@ -226,6 +234,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = true,
     this.windows = false,
     this.windowsWeb = false,
+    this.ohos = false,
+    this.ohosWeb = false,
     this.overrideIsWeb,
   });
 
@@ -245,6 +255,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = true,
     this.windows = true,
     this.windowsWeb = true,
+    this.ohos = false,
+    this.ohosWeb = false,
     this.overrideIsWeb,
   });
 
@@ -276,6 +288,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = true,
     this.windows = true,
     this.windowsWeb = true,
+    this.ohos = false,
+    this.ohosWeb = false,
     this.overrideIsWeb,
   });
 
@@ -304,6 +318,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = true,
     this.windows = true,
     this.windowsWeb = true,
+    this.ohos = true,
+    this.ohosWeb = true,
     this.overrideIsWeb,
   });
 
@@ -335,6 +351,8 @@ class FlexAdaptive with Diagnosticable {
     this.macOSWeb = false,
     this.windows = true,
     this.windowsWeb = false,
+    this.ohos = true,
+    this.ohosWeb = false,
     this.overrideIsWeb,
   });
 
@@ -374,6 +392,12 @@ class FlexAdaptive with Diagnosticable {
   /// Set to true if adaptive feature should be used on web in Windows.
   final bool windowsWeb;
 
+  /// Set to true if adaptive feature should be used on HarmonyOS (ohos).
+  final bool ohos;
+
+  /// Set to true if adaptive feature should be used on web in HarmonyOS.
+  final bool ohosWeb;
+
   /// This property should only be used if you wish to override the
   /// actual value of [kIsWeb].
   ///
@@ -409,6 +433,8 @@ class FlexAdaptive with Diagnosticable {
           return macOSWeb;
         case TargetPlatform.windows:
           return windowsWeb;
+        case TargetPlatform.ohos:
+          return ohosWeb;
       }
     } else {
       switch (platformOverride ?? defaultTargetPlatform) {
@@ -424,6 +450,8 @@ class FlexAdaptive with Diagnosticable {
           return macOS;
         case TargetPlatform.windows:
           return windows;
+        case TargetPlatform.ohos:
+          return ohos;
       }
     }
   }
@@ -442,6 +470,8 @@ class FlexAdaptive with Diagnosticable {
     bool? macOSWeb,
     bool? windows,
     bool? windowsWeb,
+    bool? ohos,
+    bool? ohosWeb,
     bool? overrideIsWeb,
   }) {
     return FlexAdaptive(
@@ -457,6 +487,8 @@ class FlexAdaptive with Diagnosticable {
       macOSWeb: macOSWeb ?? this.macOSWeb,
       windows: windows ?? this.windows,
       windowsWeb: windowsWeb ?? this.windowsWeb,
+      ohos: ohos ?? this.ohos,
+      ohosWeb: ohosWeb ?? this.ohosWeb,
       overrideIsWeb: overrideIsWeb ?? this.overrideIsWeb,
     );
   }
@@ -479,6 +511,8 @@ class FlexAdaptive with Diagnosticable {
         other.macOSWeb == macOSWeb &&
         other.windows == windows &&
         other.windowsWeb == windowsWeb &&
+        other.ohos == ohos &&
+        other.ohosWeb == ohosWeb &&
         other.overrideIsWeb == overrideIsWeb;
   }
 
@@ -497,6 +531,8 @@ class FlexAdaptive with Diagnosticable {
         macOSWeb,
         windows,
         windowsWeb,
+        ohos,
+        ohosWeb,
         overrideIsWeb,
       ]);
 
@@ -516,6 +552,8 @@ class FlexAdaptive with Diagnosticable {
     properties.add(DiagnosticsProperty<bool>('macOSWeb', macOSWeb));
     properties.add(DiagnosticsProperty<bool>('windows', windows));
     properties.add(DiagnosticsProperty<bool>('windowsWeb', windowsWeb));
+    properties.add(DiagnosticsProperty<bool>('ohos', ohos));
+    properties.add(DiagnosticsProperty<bool>('ohosWeb', ohosWeb));
     properties.add(DiagnosticsProperty<bool>('overrideIsWeb', overrideIsWeb));
   }
 }

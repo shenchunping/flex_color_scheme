@@ -4945,6 +4945,7 @@ class _AlertDialogAdaptiveExample extends StatelessWidget {
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         return TextButton(onPressed: onPressed, child: child);
       case TargetPlatform.iOS:
       case TargetPlatform.macOS:

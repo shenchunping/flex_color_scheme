@@ -26,6 +26,7 @@ class PlatformPopupMenu extends StatelessWidget {
   static const String _labelMacOs = 'Apple macOS';
   static const String _labelLinux = 'Linux';
   static const String _labelFuchsia = 'Google Fuchsia';
+  static const String _labelOhos = 'HarmonyOS';
   static final String _platform = defaultTargetPlatform.name;
   static final String _labelDefault = 'Actual platform ($_platform)';
   static const Map<TargetPlatform, IconData> _platformIcon =
@@ -36,6 +37,7 @@ class PlatformPopupMenu extends StatelessWidget {
     TargetPlatform.macOS: FlexIcons.apple,
     TargetPlatform.linux: FlexIcons.linux,
     TargetPlatform.fuchsia: FlexIcons.infinity,
+    TargetPlatform.ohos: Icons.smartphone_rounded,
   };
   static final Map<TargetPlatform, String> _platformString =
       <TargetPlatform, String>{
@@ -45,6 +47,7 @@ class PlatformPopupMenu extends StatelessWidget {
     TargetPlatform.macOS: _labelMacOs,
     TargetPlatform.linux: _labelLinux,
     TargetPlatform.fuchsia: _labelFuchsia,
+    TargetPlatform.ohos: _labelOhos,
   };
 
   @override

@@ -5786,6 +5786,7 @@ class FlexColorScheme with Diagnosticable {
       case TargetPlatform.android:
       case TargetPlatform.iOS:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.ohos:
         break;
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
@@ -7267,6 +7268,7 @@ class FlexColorScheme with Diagnosticable {
         case TargetPlatform.iOS:
         case TargetPlatform.fuchsia:
         case TargetPlatform.android:
+        case TargetPlatform.ohos:
           return 14;
       }
     }
